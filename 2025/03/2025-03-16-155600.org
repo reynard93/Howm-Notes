@@ -1,0 +1,11 @@
+= Don't use instance variables in partials
+[2025-03-16 15:56] >>> ~/Notes/2025/03/2025-03-16-155232.org
+* it couples the partial to the particular controller that setups the variable
+- you cannot freely reuse the partial when you want to render the contents
+  #+begin_src ruby
+    <%= render partial: "form", locals: { user: @user } %>
+
+    # inside of the form partial remove @user
+  #+end_src
+
+  tldr: let your partials be agnostic of where the user comes from

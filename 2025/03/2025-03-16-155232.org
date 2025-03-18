@@ -1,0 +1,19 @@
+= Do not couple params 
+[2025-03-16 15:52] 
+#+begin_src ruby
+  def post(should_notify_admin)
+    if should_notify_admin
+      puts "admin notified"
+    else
+      puts "admin dk"
+    end
+  end
+#+end_src
+
+the above is bad, the caller knows the logic the mtd is internally doing.
+instead, do this
+#+begin_src ruby
+  # create these two methods
+  comment.post
+  comment.post_without_notifying_admins
+#+end_src

@@ -1,0 +1,5 @@
+= Virtual Boxes
+[2025-03-17 19:57] >>> ~/.emacs.d/modules/init-reynard.el
+
+https://www.osboxes.org/ -> find images of os to install
+use VirtualBox to run a VM

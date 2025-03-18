@@ -1,0 +1,14 @@
+= Javascript and CSS
+[2025-03-16 16:31] >>> ~/Notes/2025/03/2025-03-16-162408.org
+<<< rails
+
+>>> propshaft
+modern alternative to sprockets
+for asset pipeline, there are choices to make for JS and CSS
+- JS: importmap (default), bun, webpack, esbuild, rollup
+- CSS: tw, bs, bulma, postcss, sass (nothing by default)
+>>>  Rails 8 way book
+* recommends a node-based approach for `JS` and not importmap
+** you will need npm packages @ some point and importmap still struggles with msot of them
+- recommended: esbuild
+for CSS, suggest postcss, if you are into writing no css at all and just utility classes, go Tailwind

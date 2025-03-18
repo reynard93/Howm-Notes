@@ -1,0 +1,18 @@
+= where your rails new read configuration
+[2025-03-16 16:23] >>> ~/Notes/2025/03/2025-03-16-155600.org
+* ~/.config/rails/railsrc
+where you can set examples like
+`
+--database=postgresql
+--javascript=esbuild
+--css=postcss
+--skip-action-cable
+--skip-action-mailbox
+--skip-action-mailer
+--skip-action-text
+--skip-active-storage
+--skip-hotwire
+--skip-test
+--skip-jbuilder
+--skip-kamal
+`

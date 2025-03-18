@@ -1,0 +1,9 @@
+= Foreman and Overmind
+[2025-03-16 16:41] >>> ~/Notes/2025/03/2025-03-16-163142.org
+* Rails generates a Procfile.dev for you
+- generates all processes for dev except for db
+- i.e. rails server, js, css
+
+both of these tools can be used to run the Procfiles
+ <<< Overmind
+ <<< Foreman

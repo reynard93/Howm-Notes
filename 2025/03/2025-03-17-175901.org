@@ -1,0 +1,33 @@
+= Lab for SSL and TLS
+[2025-03-17 17:59] >>> ~/Notes/2025/03/2025-03-17-173612.org
+* what does SSL stand for?
+secure sockets layer
+* Asymmetric encryption is more secure to use
+t
+* why would you want to use asymmetric encryption along with symmetric encryption?
+i.e. you have a set of public lock/key which you use to encrypt and decrypt messages
+you encrypt one of the public key you encrypt with your private key and send it out
+you use this public key to encrypt messages on the wire
+when the message reaches the server, you use the server's private key to decrypt this public key
+
+the reason is:
+Enhances security: asymmetric encrypts keys, symmetric encrypts data efficiently.
+* On the server side which file keeps the public keys of SSH clients?
+~/.ssh/authorized_keys
+* What file you need to send to the `certificate authority` to get signed?
+CSR
+* How do browsers know that the cert is signed by a legit authority? (ie. the CA)
+Browsers have built in CA's public key
+
+= Copy SSH keys
+[2025-03-17 18:13] 
+
+How do you configure passwordless SSH connection between two servers for a particular use?
+assume you already have an exisiting SSH connection setup between the two server
+assume the other server is called `app01` and you are user `thor`
+
+#+begin_src shell
+ssh-copy-id -i <where-your-pub-key-is> <user>@<host>
+#+end_src`
+
+<<< ssh

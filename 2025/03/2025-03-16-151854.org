@@ -1,0 +1,6 @@
+= vim
+[2025-03-16 15:18] >>> ~/Notes/0000-00-00-000000.txt
+
+let this be a vim note lol
+
+<<< ruby

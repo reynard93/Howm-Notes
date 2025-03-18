@@ -1,0 +1,15 @@
+* SSE gotchas
+[2025-03-18 16:51] 
+
+** if not HTTP/2 can have limits on max no of open connections
+- limits is per browser and can be very low
+
+** Keep CORS in Mind
+- when creating EventSource add { withCredentials: true } if you're sending a req to another server
+
+** Make sure to close the connection
+- close both from js and rails side
+
+** Better to roll your own retry/reconnect logic, built-in one is not smart enough
+- if you do use the built-in consider the `Last-Event-ID` header, this is sent when browser tries to reestablish the connection.
+  - read this header and respond with a proper event based on it

@@ -1,0 +1,13 @@
+= Updating an apache server with new SSl details
+[2025-03-17 18:18] >>> ~/Notes/2025/03/2025-03-17-175901.org
+Edit the `/etc/httpd/conf.d/ssl.conf` file
+Change the SSLCertificateFile and SSLCertificateKeyFile to point to your generated cert and key (just use ai to generate the keys and cert and sign)
+restart the apache server
+sudo systemctl restart httpd
+
+to test if server is using correct cert or not use
+#+begin_src shell
+echo | openssl s_client -showcerts -servername app01.com -connect app01:443 2>/dev/null | openssl x509 -inform pem
+#+end_src
+
+<<< ssl

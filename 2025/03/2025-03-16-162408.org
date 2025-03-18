@@ -1,0 +1,14 @@
+= bundler
+[2025-03-16 16:24] >>> ~/Notes/2025/03/2025-03-16-162313.org
+* be aware of versioning, reading from git repo, setting specific env, locally
+<<< bundler
+* purpose of running commands prefixed with `bundle exec`
+correct versions, because people tend to forget, bundler offers `binstubs`
+<<< binstubs
+they are small shell scripts taht load up Bundler first to ensure you are loading the correct executable
+  (there are some included by default always : bundle and rails)
+  you could add a binstub of a commonly used executable (i.e. a gem of yours) with some command
+  now you need to prefix ./bin instead of bundle exec but you could improve it by adding this bin folder to your search path
+  - or alternatively use direnv to manipulate your path whenever you `cd`
+  - add this to your `envrc` if you choose direnv
+    PATH_add bin

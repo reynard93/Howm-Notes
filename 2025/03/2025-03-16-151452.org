@@ -1,0 +1,11 @@
+= >>> ruby this is a ruby howm ntoe iam jst testign hsit
+[2025-03-16 15:14] >>> ~/.emacs.d/modules/init-howm.el
+<<< vim
+
+test how this works/?
+
+>>> vim
+
+i don't see any hsit
+<<< vim
+so what now? if go vim vim???

@@ -1,0 +1,11 @@
+= Deploying a E commerce application
+[2025-03-17 19:07] >>> ~/.emacs.d/modules/init-reynard.el
+* Install firewall
+:PROPERTIES:
+:ID:       12DCDC1B-A488-45CC-B828-4E97F7E8BA7E
+:END:
+
+put web server ip addresses on your config to ensure that the webserver has sufficient permission to connect to the database servers
+
+#+DOWNLOADED: screenshot @ 2025-03-17 19:12:56
+[[file:Install_firewall/2025-03-17_19-12-56_screenshot.png]]

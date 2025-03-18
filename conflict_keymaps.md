@@ -1,0 +1,99 @@
+WhichKey: checking conflicting keymaps ~
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **">"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"y"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"ys"**
+- rhs: `<Plug>(sandwich-add)`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"<lt>"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"s"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"sr"**
+- rhs: `<Plug>(sandwich-replace)`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"sd"**
+- rhs: `<Plug>(sandwich-delete)`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"c"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"cs"**
+- rhs: `<Plug>(sandwich-replace)`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"gu"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"gc"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"gU"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"g~"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"m"**
+- rhs: `<Cmd>lua require'marks'.set()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" l"**
+- rhs: `:lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" g"**
+- rhs: `:lua require('config.plugins.telescope').my_git_status()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" m"**
+- rhs: `:lua require('telescope.builtin').marks()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" r"**
+- rhs: `:lua require'telescope'.extensions.egrepify.egrepify {}<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" n"**
+- rhs: `:lua require('config.plugins.telescope').my_note()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" b"**
+- rhs: `:lua require('config.plugins.telescope').my_buffers()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" bd"**
+- rhs: `:BDelete this<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" f"**
+- rhs: `:lua require('telescope.builtin').find_files({hidden=true})<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" tl"**
+- rhs: `<Cmd>Trouble lsp_references<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" ds"**
+- rhs: `<Cmd>lua require'dap'.step_over()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" dc"**
+- rhs: `<Cmd>lua require'dap'.continue()<CR>`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" dr"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" of"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **" ob"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"d"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"ds"**
+- rhs: `<Plug>(sandwich-delete)`
+- WARNING conflicting keymap exists for mode **"n"**, lhs: **"dm"**
+- rhs: `<Cmd>lua require'marks'.delete()<CR>`
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"i"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"il"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"in"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"is"**
+- rhs: `<Plug>(textobj-sandwich-query-i)`
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"s"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"a"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"al"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"an"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"v"**, lhs: **"as"**
+- rhs: `<Plug>(textobj-sandwich-query-a)`
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"i"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"il"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"in"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"is"**
+- rhs: `<Plug>(textobj-sandwich-query-i)`
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"s"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"a"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"al"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"an"**
+- rhs: ` `
+- WARNING conflicting keymap exists for mode **"o"**, lhs: **"as"**
+- rhs: `<Plug>(textobj-sandwich-query-a)`

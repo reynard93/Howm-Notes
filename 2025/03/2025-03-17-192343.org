@@ -1,0 +1,18 @@
+= Kodekloud E-commerce application
+[2025-03-17 19:23] 
+
+install `firewalld` start,enable it
+
+systemctl commands:
+1. start
+2. enable
+3. status
+
+* adding firewall rules to difference services
+
+`sudo firewall-cmd --permanent --zone=public --add-port=3306/tcp`
+
+you must reload to see the effect `firewall-cmd --reload`
+
+to see running firewalls
+`firewall-cmd --list-all`

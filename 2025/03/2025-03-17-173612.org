@@ -1,0 +1,35 @@
+= SSL & TLS Basics
+[2025-03-17 17:36] 
+<<< tls
+<<< ssl
+verify website is legit
+* Symmetric Encryption
+1. use one key to encrypt and decrypt
+2. key has to be sent along with the encrypted data, risk of key being intercepted
+3. to securely transfer the public key we use Asymmetric Encryption
+   
+* Asymmetric Encryption
+1. put your public locks on your servers
+2. private key to decrypt (usually private keys have .key on them)
+
+   to generate a private and public key pair
+
+to get private key
+   #+begin_src bash
+openssl genrsa -out my-bank.key 1024
+   #+end_src
+
+to get public lock
+#+begin_src bash
+openssl rsa -in my-bank.key -pubout > mybank.pem
+#+end_src
+
+only the private key can be used to decrypt the public key
+the private key is not sent out
+hacker only has the encrypted message and public key, but he needs the private key to decrypt
+
+You can encrypt data with only one of public / private
+It is not true that only the lock (public key) can encrypt data
+** if you encrypt with your private key anyone with public key can decrypt your message
+** but you CANNOT encrypt and decrypt with the same key
+- dangerous ! public keys are easily accessible

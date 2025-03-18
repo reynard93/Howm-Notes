@@ -1,0 +1,13 @@
+= Phishing and CAs
+[2025-03-17 17:53] >>> ~/Notes/2025/03/2025-03-17-173612.org
+
+* Phishing
+hacker creates a fake website
+look at key you receive from the server and see if it is a legitimate key
+- certificate is sent along with the key from the server
+- how do you verify if a certificate is legit? > who signed and issued
+- use `CA` to get your certificate signed by an authority
+
+how to get your certificate signed by a CA ? - an openssl command
+
+whole thing is known as PKI (Public Key infrastructure)
