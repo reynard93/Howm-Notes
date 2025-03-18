@@ -8,3 +8,6 @@ bundler
 ssl
 tls
 ssh
+fga
+abac
+ABAC

@@ -1,0 +1,29 @@
+= FGA
+[2025-03-18 17:04]
+<<< fga
+<<< abac
+* Understanding FGA
+** Key Elements
+1. Subject: The user or service requesting access. In FGA, the subject's attributes (e.g., department, role, geo-location) are crucial in making authorization decisions.
+2. Action: The specific operation the subject wants to perform (e.g., read, write, delete). Each action can have its own set of rules and conditions (Like a quota on the number of performed actions).
+3. Resource: The object or data the subject wants to access. Resources can be individual records, files, or any other entity within the application. Attributes of the resource (e.g., resource location, ownership) are also considered in the decision-making process.
+
+** Benefits of Fine-Grained Authorization
+Fine-grained authorization offers several significant advantages over coarse-grained methods:
+
+Increased Precision: By considering multiple attributes, conditions, and relationships, FGA provides precise control over who can do what, reducing the risk of unauthorized access.
+Flexibility: FGA can easily adapt to changing business requirements and complex scenarios, making it easier to implement and manage dynamic access policies.
+Enhanced Security: Detailed access control reduces the chances of over-privileged users, thereby minimizing security risks and potential breaches.
+Better User Experience: Users get appropriate access without unnecessary restrictions, facilitating smoother and more secure collaboration
+
+** Two primary approach to configuring FGA accessible and Manageable
+1. Conditions
+Conditions use the attributes of subjects, actions, and resources to create dynamic rules. A condition (or attribute) based authorization model is known as Attribute-Based Access Control (ABAC). Take this authorization policy, for example:
+
+A user can approve expense reports if they are a manager and the amount is below $5,000.
+While we could have set up the manager role with regular RBAC, defining a specific amount for the expense requires a much more fine-grained approach to managing our resources. Instead of using static roles, FGA allows us to use conditions that make our roles, and thus our policies, more dynamic.
+2. Relationships
+Relationships define access rules based on the connections between users and resources. For example, a user who owns a dashboard might implicitly have certain permissions on all elements within that dashboard. Relationships can also be used to grant permissions, making it easier to manage complex hierarchies. A relationship-based authorization model is known as Relationship Based Access Control (ReBAC).
+
+
+[[https://www.permit.io/blog/what-is-fine-grained-authorization-fga][Permit article what is FGA]]
