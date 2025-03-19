@@ -38,16 +38,37 @@ best way to analyse profile is json inputted into >
 https://www.speedscope.app/
 - left-heavy tab of speedscope aggregates common stacks and shows you some patterns in your code
 - most useful for low-hanging optimizations is the sandwich view, things taking a lot of time are on the top
+- whereby low-hanging optimizations requires jsut a line / few words to fix
 - as you look through note down the list of suspicious things
 
 * to run Vernier is just env of `TEST_VERNIER=1`
 https://vernier.prof/ <- upload the results
 web version (above) supports looking at the src code of ruby gem whereas local doesn't
 use one or the other, vernier seems baked with more things, im slightly preferring it
+- can right click on a stack and select focus on subtree only to deep dive into a particular stack
 
+- in the video as you focus on the webpacker stack you discover that the cache is not loaded, this is a simple configuration within webpacker.yml, 'cache_manifest: true'
 
-
+- looking at the 'Marker Chart' you are able to tell when a thread is running and what it is blocked by
+- realise from this that the debugger is blocking the thread constantly where it keeps checking, the way to solve this is to disable the debugger (debug), require: false in your gemfile
+- what you should do instead is to require debug when u need it, or run rspec with -rdebug flag
+  
+for the webpacker fix, it is also glaring that it is only relevant for view related specs, but it wind up affecting the requests as well, causing a even more dramatic difference  
 
 "Invert call stack" in the context of profiling tools refers to a feature that allows you to view the call stack in a reversed manner. Typically, a call stack displays the sequence of function calls leading up to a certain point in the code, starting from the initial function down to the currently executing function.
 
 When you invert the call stack, it shows the functions that were called, starting from the most recently executed function and tracing back to the original caller
+
+** to create a separate json file make use of a env flag that sets a suffix
+example: TEST_PROF_REPORT=<some-random-suffix-that-identifies-json>
+there is also a config to add timestamps by default -> requires writing some code in the configuration
+
+* EventProf
+setting up instantiation for a particular method
+write the following snippet within rails_helper
+
+#+begin_src ruby
+TestProf::EventProf.monitor(PaperClip::Attachment, :process_file, "process_file.file_attachment")
+#+end_src
+
+TestProf::EventProf.monitor(<Class>, :mtd, <custom-name-for-event>)
