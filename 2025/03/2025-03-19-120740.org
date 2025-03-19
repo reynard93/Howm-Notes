@@ -10,6 +10,8 @@ https://evilmartians.com/chronicles/test-prof-3-guided-and-automated-ruby-test-p
     how to: go to `spec_helper.rb` and do `require "test_prof/recipes/rspec/sample"`
 * Focused profiling
 - TagProf, EventProf
+  similar tests has similar problems
+  Focus on most time consuming test types, not individual outliers
 * Factories overhead elimination
 ** TODO fix the font lock issue
 DEADLINE: <2025-03-20 Thu>
@@ -68,7 +70,62 @@ setting up instantiation for a particular method
 write the following snippet within rails_helper
 
 #+begin_src ruby
-TestProf::EventProf.monitor(PaperClip::Attachment, :process_file, "process_file.file_attachment")
+TestProf::EventProf.monitor(PaperClip::Attachment, :"paper_clip.post_process", :post_process) # note the method is found by looking at stacktraces
 #+end_src
 
-TestProf::EventProf.monitor(<Class>, :mtd, <custom-name-for-event>)
+TestProf::EventProf.monitor(<Class>, <custom-name-for-event>, <:mtd-name>)
+
+running on the terminal according to the custom-name
+#+begin_src shell
+EVENT_PROF=paper_clip.post_process be rspec spec/models/
+#+end_src
+
+can refer to below TagProf, the event you set to EVENT_PROF is the same i.e. sidekiq.inline or paper_clip.post_process etc
+
+some extras on '55.28' to conditionally use Sidekiq fake or inline due to the test setup  by configuring some stuff on `rails_helper`
+
+* TagProf
+:PROPERTIES:
+:ID:       65C9D20B-FE4D-45B2-A3AB-7C8B78A6F19B
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-19 16:10:35
+[[file:TagProf/2025-03-19_16-10-35_screenshot.png]]
+typically post_process is a custom added process
+able to see what is the most time consuming group according to a list 'request|model|controller|etc...'
+
+* Misc
+:PROPERTIES:
+:ID:       012D7D74-074C-42D2-B2B1-AB53DA5B134F
+:END:
+i didn't know you could set these metadata on a it block like this
+
+#+DOWNLOADED: screenshot @ 2025-03-19 16:37:46
+[[file:Misc/2025-03-19_16-37-46_screenshot.png]]
+before and after is 'it' and  'do' respectively
+
+then inside rails_helper can look at it and toggle Sidekiq::Testing
+
+#+DOWNLOADED: screenshot @ 2025-03-19 16:38:46
+[[file:Misc/2025-03-19_16-38-46_screenshot.png]]
+
+** you could change from 'it' to 'fit' to focus on a specific test(s)
+
+
+** you want to add these two lines within Rspec.configure under spec_helper.rb
+:PROPERTIES:
+:ID:       56F18584-40B4-4D93-A574-C9CE05EEECAA
+:END:
+
+#+DOWNLOADED: screenshot @ 2025-03-19 16:40:51
+[[file:Misc/2025-03-19_16-40-51_screenshot.png]]
+
+These configuration options control how tests (specs) are executed:
+
+config.run_all_when_everything_filtered = true - This setting tells the test runner to run all tests if no specific filter is applied or if all tests are filtered out. This ensures that even if you attempt to run only specific tests but your filter doesn't match any tests, the entire test suite will still run instead of running nothing.
+config.filter_run_when_matching :focus - This setting allows you to tag certain tests with :focus and then only those tagged tests will run. This is extremely useful during development when you want to focus on a specific set of tests without running the entire test suite.
+
+Together, these settings provide a convenient workflow where you can:
+
+Tag specific tests with :focus to run only those tests during development
+Remove all :focus tags to run the entire test suite (thanks to the first setting)

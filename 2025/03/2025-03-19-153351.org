@@ -1,0 +1,12 @@
+= Reusability Concerns or Service Objects
+[2025-03-19 15:33] >>> ~/Notes/2025/03/2025-03-19-120740.org
+<<< service objects
+<<< concerns
+Reusability for concerns: involves thinking about model-level behavior reuse across different ActiveRecord models. Concerns in Rails are particularly designed for this cross-model sharing of functionality.
+Service objects are reusable too, but in a different way:
+
+Concerns excel at sharing behavior across multiple models (horizontal reuse across different model classes)
+Service objects excel at encapsulating complex operations that might involve multiple models or systems (vertical reuse of business logic)
+
+In your specific case, if you need the accessibility checking in multiple models (Submissions, Comments, Documents, etc.), a concern would be a natural fit.
+If instead this authorization logic involves complex rules or external services, a service object might be more appropriate despite the potential confusion with your API services.
