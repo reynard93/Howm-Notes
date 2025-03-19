@@ -1,0 +1,53 @@
+= Ruby Profiling tools
+[2025-03-19 12:07] 
+<<< profiling
+<<< ruby
+https://evilmartians.com/chronicles/test-prof-3-guided-and-automated-ruby-test-profiling
+* General profiling
+- Stackprof, Vernier, sampling
+- sampling : collects stack traces over time while ur program is running
+  - sample : uses a random subset of tests
+    how to: go to `spec_helper.rb` and do `require "test_prof/recipes/rspec/sample"`
+* Focused profiling
+- TagProf, EventProf
+* Factories overhead elimination
+** TODO fix the font lock issue
+DEADLINE: <2025-03-20 Thu>
+- `let_it_be` wtf?? -> this is because of font lock mode
+** Play by play
+use dip (gem install dip) to manage docker
+*** do `dip  runner`
+* TODO Do a patch for profiler gems and add a revert patch that you can apply easily
+SCHEDULED: <2026-03-20 Fri>
+
+* Test Prof is configured using env variables
+- seeding it will give you the same subset of tests
+- how to see the seed? run it once first and you should see the seed id on the logs
+- SAMPLE=100 <rspec cmd> --seed <seedid>
+
+* Dont need to run coverage for every test run (15-20% overhead)
+- simply don't require simplecov
+
+
+* to run Stackprof set this env
+TEST_STACK_PROF=1
+
+charlock_holmes is a dependency that is failing, look at https://github.com/brianmario/charlock_holmes/issues/190
+
+best way to analyse profile is json inputted into >
+https://www.speedscope.app/
+- left-heavy tab of speedscope aggregates common stacks and shows you some patterns in your code
+- most useful for low-hanging optimizations is the sandwich view, things taking a lot of time are on the top
+- as you look through note down the list of suspicious things
+
+* to run Vernier is just env of `TEST_VERNIER=1`
+https://vernier.prof/ <- upload the results
+web version (above) supports looking at the src code of ruby gem whereas local doesn't
+use one or the other, vernier seems baked with more things, im slightly preferring it
+
+
+
+
+"Invert call stack" in the context of profiling tools refers to a feature that allows you to view the call stack in a reversed manner. Typically, a call stack displays the sequence of function calls leading up to a certain point in the code, starting from the initial function down to the currently executing function.
+
+When you invert the call stack, it shows the functions that were called, starting from the most recently executed function and tracing back to the original caller
