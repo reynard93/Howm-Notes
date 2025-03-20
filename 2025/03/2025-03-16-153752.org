@@ -1,2 +1,0 @@
-= 
-[2025-03-16 15:37] >>> ~/.emacs.d/modules/init-howm.el
