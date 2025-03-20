@@ -1,0 +1,4 @@
+= Find the linkarzu video where he has a way to dismiss notifications
+[2025-03-20 23:48] 
+* TODO Dismiss notifications with keyboard shortcuts :productivity:efficiency:keyboard:
+SCHEDULED: <2025-03-21 Fri>

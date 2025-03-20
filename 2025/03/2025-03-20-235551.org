@@ -1,0 +1,3 @@
+= Howm notes Not appearing on org agenda
+[2025-03-20 23:55] >>> ~/.config/emacs/modules/init-writing.el
+* do you know why? is it because recursive directories are not searched ? only the base directory defined as org-directory
